@@ -17,12 +17,19 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   background-color: #0b0000;
 }
 
+/* Tiles */
+
 .tiles-container {
+  display: flex;
+}
+
+.column-container {
   display: flex;
   flex-direction: column;
 }
@@ -37,9 +44,30 @@ a {
   justify-content: center;
   align-items: center;
   margin: 6px;
-  width: 90px;
+  width: 75px;
   aspect-ratio: 1;
   border: 2px solid #999999;
   color: #fff;
   border-radius: 5px;
+}
+
+/* Keyboard */
+
+.keyboard {
+  display: flex;
+  align-items: center;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  width: 60px;
+  height: 75px;
+  border: none;
+  border-radius: 5px;
+  background-color: #999999;
+  font-size: large;
+  color: #fff;
 }

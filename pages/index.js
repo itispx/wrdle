@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Grid from "../components/Grid";
+import Keyboard from "../components/Keyboard";
 
 const initialGrid = [
   ["A", "B", "", "", ""],
@@ -24,6 +25,7 @@ export default function Home() {
   return (
     <div className="container">
       <Grid grid={grid} />
+      <Keyboard />
     </div>
   );
 }

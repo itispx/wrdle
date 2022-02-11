@@ -4,7 +4,7 @@ import Tile from "./Tile";
 
 const Grid = ({ grid }) => {
   return (
-    <div className="tiles-container">
+    <div className="tiles-container column-container">
       {grid.map((row) => {
         return (
           <div className="row-container">
