@@ -1,7 +1,7 @@
 import React from "react";
 
-const Title = React.memo(({ letter }) => {
+const Tile = React.memo(({ letter }) => {
   return <div className="tile">{letter}</div>;
 });
 
-export default Title;
+export default Tile;

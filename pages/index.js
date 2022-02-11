@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Tile from "../components/Tile";
+import Grid from "../components/Grid";
 
 const initialGrid = [
   ["A", "B", "", "", ""],
@@ -23,17 +23,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="tiles-container">
-        {grid.map((row) => {
-          return (
-            <div className="row-container">
-              {row.map((obj, index) => (
-                <Tile key={index} letter={obj} />
-              ))}
-            </div>
-          );
-        })}
-      </div>
+      <Grid grid={grid} />
     </div>
   );
 }
