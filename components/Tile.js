@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const Tile = React.memo(({ letter }) => {
-  return <div className="tile">{letter}</div>;
+import { AppContext } from "../context/AppContext";
+
+const Tile = React.memo(({ letter, row, column }) => {
+  const { setSelectedIndex } = useContext(AppContext);
+
+  return (
+    <button className="tile" onClick={() => setSelectedIndex([row, column])}>
+      {letter}
+    </button>
+  );
 });
 
 export default Tile;

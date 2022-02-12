@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { AppContext } from "../context/AppContext";
 
 import Tile from "./Tile";
 
-const Grid = ({ grid }) => {
+const Grid = () => {
+  const { grid, word } = useContext(AppContext);
+
   return (
     <div className="tiles-container column-container">
-      {grid.map((row) => {
+      {grid.map((row, rowIndex) => {
         return (
           <div className="row-container">
-            {row.map((obj, index) => (
-              <Tile key={index} letter={obj} />
+            {row.map((obj, columnIndex) => (
+              <Tile
+                key={columnIndex}
+                letter={obj}
+                row={rowIndex}
+                column={columnIndex}
+              />
             ))}
           </div>
         );
