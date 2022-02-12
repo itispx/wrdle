@@ -4,8 +4,8 @@ import { AppContext } from "../context/AppContext";
 
 import Tile from "./Tile";
 
-const Grid = () => {
-  const { grid, word } = useContext(AppContext);
+const Grid = React.memo(() => {
+  const { grid } = useContext(AppContext);
 
   return (
     <div className="tiles-container column-container">
@@ -13,18 +13,13 @@ const Grid = () => {
         return (
           <div className="row-container">
             {row.map((obj, columnIndex) => (
-              <Tile
-                key={columnIndex}
-                letter={obj}
-                row={rowIndex}
-                column={columnIndex}
-              />
+              <Tile letter={obj} row={rowIndex} column={columnIndex} />
             ))}
           </div>
         );
       })}
     </div>
   );
-};
+});
 
 export default Grid;
