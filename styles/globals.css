@@ -81,6 +81,16 @@ button {
   background-color: #999999;
 }
 
+.rightKeyWrongIndex {
+  border-color: #9b870c;
+  background-color: #9b870c;
+}
+
+.rightKeyRightIndex {
+  border-color: #032e2a;
+  background-color: #032e2a;
+}
+
 /* Keyboard */
 
 .keyboard {
@@ -106,7 +116,7 @@ button {
 }
 
 .activeKey {
-  background-color: green;
+  background-color: #032e2a;
 }
 
 .unactiveKey {
