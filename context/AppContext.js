@@ -45,7 +45,9 @@ export const AppProvider = ({ children }) => {
 
   function deleteHandler() {
     inputValue("");
-    setCurrentIndex((prev) => [prev[0], prev[1] - 1]);
+    if (currentIndex[1] !== 0) {
+      setCurrentIndex((prev) => [prev[0], prev[1] - 1]);
+    }
   }
 
   function inputValue(value) {
