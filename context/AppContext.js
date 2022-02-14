@@ -22,11 +22,10 @@ export const AppProvider = ({ children }) => {
   function pressHandler(key) {
     switch (key) {
       case "⏎":
-        console.log("Enter");
         enterHandler();
         break;
       case "⌫":
-        // deleteHandler();
+        deleteHandler();
         break;
       default:
         inputValue(key);
@@ -38,15 +37,16 @@ export const AppProvider = ({ children }) => {
     let currentAttempt = [];
     grid[currentIndex[0]].map((v) => v && currentAttempt.push(v));
 
-    console.log("currentAttempt:", currentAttempt);
-
     if (currentAttempt.length === 5) {
       nextRow();
       setAttemptedKeys((prev) => [...prev, ...currentAttempt]);
     }
   }
 
-  function deleteHandler() {}
+  function deleteHandler() {
+    inputValue("");
+    setCurrentIndex((prev) => [prev[0], prev[1] - 1]);
+  }
 
   function inputValue(value) {
     let tempGrid = [...grid];
